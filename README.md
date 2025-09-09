@@ -50,3 +50,8 @@ The app starts at `http://localhost:3000`.
 - Troubleshooting log: see `docs/TROUBLESHOOTING.md`.
 - API & SDK tasks: see `docs/API_SDK.md`.
 - Communication & Leadership: see `docs/COMMUNICATION.md`.
+
+#### Stretch goals implemented
+
+- Tenant switcher UI: if a user belongs to multiple tenants, a selector appears that lists their `tenantIds`. Choosing a tenant calls `switchTenant({ tenantId, silentReload: true })` to change context.
+- Deployment ready: build with `npm run build` and deploy the `frontend/build` folder to any static host (Netlify, Vercel, GitHub Pages). Remember to add your deployed origin to Allowed Origins and App URL in Frontegg.
