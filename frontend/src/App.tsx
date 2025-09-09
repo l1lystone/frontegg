@@ -74,15 +74,15 @@ function App() {
         <h2>Welcome{user?.name ? `, ${user.name}` : ''}!</h2>
         <p>{user?.email}</p>
         {tenantIds.length >= 1 ? (
-          <div style={{ marginTop: 16 }}>
+          <div style={{ marginTop: 16, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div style={{ marginBottom: 8 }}>
               <strong>Active tenant:</strong> {currentTenantName}
             </div>
-            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'center', justifyContent: 'center' }}>
               <select
                 value={selectValue}
                 onChange={(e) => setSelectedTenantId(e.target.value)}
-                style={{ padding: 6, opacity: tenantIds.length < 2 ? 0.6 : 1 }}
+                className="select"
                 disabled={tenantIds.length < 2}
               >
                 {selectValue === '' ? (
@@ -100,17 +100,8 @@ function App() {
                 })}
               </select>
               <button
+                className="btn"
                 disabled={tenantIds.length < 2 || !selectedTenantId || selectedTenantId === user?.tenantId}
-                style={{
-                  opacity:
-                    tenantIds.length < 2 || !selectedTenantId || selectedTenantId === user?.tenantId
-                      ? 0.6
-                      : 1,
-                  cursor:
-                    tenantIds.length < 2 || !selectedTenantId || selectedTenantId === user?.tenantId
-                      ? 'not-allowed'
-                      : 'pointer',
-                }}
                 onClick={() => {
                   if (selectedTenantId) {
                     const label = tenantNameById.get(selectedTenantId) ?? selectedTenantId;
@@ -125,9 +116,11 @@ function App() {
             </div>
           </div>
         ) : null}
-        <div style={{ display: 'flex', gap: 12, marginTop: 20 }}>
-          <button onClick={() => AdminPortal.show()}>Open Admin Portal</button>
-          <button
+        <div className="actions">
+          <button className="btn" onClick={() => AdminPortal.show()}>
+            Open Admin Portal
+          </button>
+          <button className="btn"
             onClick={() => {
               const baseUrl = ContextHolder.getContext().baseUrl;
               // Ensure user lands back in the app after logout
