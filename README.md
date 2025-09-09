@@ -50,5 +50,3 @@ The app starts at `http://localhost:3000`.
 - Troubleshooting log: see `docs/TROUBLESHOOTING.md`.
 - API & SDK tasks: see `docs/API_SDK.md`.
 - Communication & Leadership: see `docs/COMMUNICATION.md`.
-
-Security note: never commit real secrets. `.env.local` is gitignored; use the provided example as a template.
