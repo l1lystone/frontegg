@@ -53,5 +53,5 @@ The app starts at `http://localhost:3000`.
 
 #### Stretch goals implemented
 
-- Tenant switcher UI: if a user belongs to multiple tenants, a selector appears that lists their `tenantIds`. Choosing a tenant calls `switchTenant({ tenantId, silentReload: true })` to change context.
+- Tenant switcher UI: if a user belongs to multiple tenants, a selector appears that lists their tenant names. Choosing a tenant calls `switchTenant({ tenantId, silentReload: true })` to change context.
 - Deployed https://frontegg.vercel.app/
